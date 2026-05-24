@@ -47,7 +47,7 @@ def crop_prediction(request):
             'Crop_recommendation',
             'Crop_recommendation.csv'
         )
-        data = pd.read_csv("C:\\Users\\nk568\\OneDrive\\Desktop\\Project01\\Crop_recommendation\\Crop_recommendation.csv")
+        data = pd.read_csv("dataset.csv")
 
         X = data.drop('label', axis=1)
         y = data['label']
