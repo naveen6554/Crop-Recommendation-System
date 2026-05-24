@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login Page</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+        *{ margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
+
+        body{
+            height:100vh;
+            background: linear-gradient(-45deg, #1e3c72, #2a5298, #00c9ff, #92fe9d);
+            background-size:400% 400%;
+            animation: gradientBG 12s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0%{ background-position:0% 50%; }
+            50%{ background-position:100% 50%; }
+            100%{ background-position:0% 50%; }
+        }
+
+        form{
+            height:520px;
+            width:400px;
+            background: rgba(255,255,255,0.1);
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%, -50%);
+            border-radius:12px;
+            backdrop-filter: blur(15px);
+            border:1px solid rgba(255,255,255,0.2);
+            box-shadow:0 0 40px rgba(0,0,0,0.4);
+            padding:50px 35px;
+        }
+
+        h3{ text-align:center; color:#fff; }
+
+        label{ margin-top:20px; display:block; color:#fff; }
+
+        input{
+            width:100%;
+            height:45px;
+            margin-top:8px;
+            border-radius:6px;
+            padding:0 10px;
+            background: rgba(255,255,255,0.2);
+            color:#fff;
+            border:none;
+        }
+
+        button{
+            margin-top:30px;
+            width:100%;
+            padding:12px;
+            background:#fff;
+            border:none;
+            cursor:pointer;
+        }
+
+        .error{
+            color:#ff4d4d;
+            text-align:center;
+            margin-top:10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<form method="POST">
+    <h3>Login Here</h3>
+
+    {% csrf_token %}
+
+    {% if error %}
+        <div class="error">{{ error }}</div>
+    {% endif %}
+
+    <label>Username</label>
+    <input type="text" name="username" placeholder="Enter Username">
+
+    <label>Password</label>
+    <!-- ✅ FIXED -->
+    <input type="password" name="password" placeholder="Enter Password">
+
+    <button type="submit">Login</button>
+</form>
+
+</body>
+</html>

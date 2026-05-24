@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Crop Recommendation System</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvxh4_NzxPObs3auPYoJIUojZJvrn6v1Akhw&s') no-repeat center center/cover;
+      min-height: 100vh;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+      text-align: center;
+      color: #333;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+
+    .btn-start {
+      margin-top: 20px;
+      padding: 10px 25px;
+      font-size: 18px;
+      border-radius: 25px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+
+      <!-- ✅ FIX: use '/' if home not defined -->
+      <a class="navbar-brand" href="/">🌾 Crop AI</a>
+
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+
+          <!-- Crop Prediction -->
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'crop_prediction' %}">Crop Prediction</a>
+          </li>
+
+          <!-- Logout -->
+          <li class="nav-item">
+            <a href="{% url 'logout' %}" class="btn btn-danger ms-3">Logout</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HOME CONTENT -->
+  <div class="hero">
+    <div>
+      <h1>🌱 Welcome to Smart Crop Recommendation System</h1>
+      <p>
+        Get the best crop suggestions based on soil nutrients, temperature, humidity, and rainfall.
+      </p>
+
+      <a href="{% url 'crop_prediction' %}" class="btn btn-success btn-start">
+        Start Prediction
+      </a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="fixed-bottom text-center p-2 bg-light">
+      © 2026 | Crop Recommendation System
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
